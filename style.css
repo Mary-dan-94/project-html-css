@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+* {
+box-sizing: border-box;
+
+}
+
+html, body {
+    --border-radius: 24px;
+    --light-green: #F2F8F1;
+    --Black-green: #0D170C;
+    margin: 0;    
+    color: var(--Black-green);
+    font-size: 22px;
+    font-family: "Funnel Display", sans-serif;
+}
+
+body {
+    padding: 12px;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    top: 75px;
+    z-index: 2;
+}
+
+section.sticky {
+    position: sticky;
+    margin-top: 75px;
+}
+
+section.full-screen {
+    height: 95vh;
+    top: 0;
+    margin-top: 0;
+    z-index: 3;
+    padding: 12px;
+}
+
+/* navigation */
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 45px;
+}
+
+h1 {
+font-size: 80px;
+font-weight: 400;
+color: #6B52E7; 
+margin: 0; 
+}
+
+p {
+margin: 0%;
+}
+
+/*navigation items hover state */
+
+nav ul li :hover {
+    color: #403F00;
+}
+
+/* about section */
+
+section.about .empty {
+   flex-basis: 37.5vw;
+   border-radius: var(--border-radius);
+   transition: flex-basis 1s cubic-bezier(0,.94,.95,.48);
+   min-width: 15vw;
+}
+
+section.about article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 12px;
+
+}
+
+section.about article .title {
+    flex: 2;
+    display: flex;
+    align-items: flex-end;
+    background: #93FAFF;
+    border-radius: var(--border-radius);
+    padding: 2.125vw;
+    transition: flex-basis 1s cubic-bezier(0,.94,.95,.48); 
+}
+
+section.about article .description {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    padding: 2.125vw;
+    background: #403F00;
+    color: #93FAFF;
+    min-width: 42vw; 
+
+}
+
+/* service section */
+
+section.service article {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+section.service figure {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 56.25vw;
+    margin: 0;
+    background: #02B727;
+    border-radius: var(--border-radius);
+    gap: 12px;
+}
+
+section.service figure img {
+
+    width: 50%;
+    animation-name: float;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+section.service .text {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    background: var(--light-green);
+    padding: 3.125vw;
+    border-radius: var(--border-radius);
+}
+
+section.service .text a {
+
+    font-family: "Funnel Display", sans-serif;
+    margin-top: 24px;
+}
+
+/*service section images animations*/
+
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Start at normal position */
+    }
+    50% {
+        transform: translateY(-20px); /* Move up */
+    }
+    100% {
+        transform: translateY(0); /* Return to start */
+    }
+}
+
+
+/*service section overrides*/
+
+/* HTML section */
+section.service.service-html figure {
+    background: #02B727; 
+}
+
+section.service.service-html .text h2,
+section.service.service-html .text a {
+    color: var(--Black-green); 
+}
+
+section.service.service-html a:hover {
+    color: #96D906;
+}
+
+/* CSS section */
+section.service.service-css figure {
+
+    background: #ECFE03;
+}
+
+section.service.service-css .text h2,
+section.service.service-css .text a {
+    color: var(--Black-green); 
+}
+
+section.service.service-css a:hover {
+    color: #6B52E7;
+}
+
+/* JavaScript section */
+section.service.service-js figure {
+    background: #01ECFE; 
+}
+
+section.service.service-js .text h2,
+section.service.service-js .text a {
+    color: var(--Black-green);
+}
+
+section.service.service-js a:hover {
+    color: #FE01ED;
+}
+
+/* contact section */
+
+section.contact {
+    background-color: #F2F8F1; 
+    background-image: 
+    radial-gradient(circle at 20% 30%, rgb(79, 255, 143), transparent 100%), 
+    radial-gradient(circle at 80% 70%, rgb(255, 55, 245), transparent 100%), 
+    radial-gradient(circle at 50% 50%, rgb(108, 240, 255), transparent 100%);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+}
+
+section.contact a {
+    font-family: "Funnel Display", sans-serif;
+    font-weight: 400;
+    font-size: 88px;
+    color: var(--light-green);
+}
+
+/* email link hover state */
+
+section.contact a:hover {
+    color: #6C53E7;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 670px) { 
+    html, body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    section.service figure {
+        border-radius: 20px;
+    }
+
+    section.service article {
+        flex-direction: column;
+    }
+
+    section.about .empty {
+        display: none;
+
+    }
+
+    section.service .text {
+        border-radius: 20px;
+    }
+
+    section.service figure img {
+        width: 20%;
+    }
+
+    
+
+}
