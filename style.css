@@ -162,7 +162,7 @@ section.service .text {
     justify-content: center;
     flex: 1;
     background: var(--light-green);
-    padding: 3.125vw;
+    padding: 2.125vw;
     border-radius: var(--border-radius);
 }
 
@@ -258,38 +258,81 @@ section.contact a:hover {
     color: #6C53E7;
 }
 
-/* responsive */
-
+/* Responsive Styles */
 @media only screen and (max-width: 670px) { 
+    /* Global Base Adjustments */
     html, body {
         font-size: 14px;
     }
 
+    section.sticky {
+        margin-top: 63px;
+    }
+
+    /* Typography */
     h1 {
-        font-size: 60px;
+        font-size: 3.5rem; 
     }
 
-    section.service figure {
-        border-radius: 20px;
+    p {
+        font-size: 1.125rem; 
+        line-height: 1.5;
     }
 
-    section.service article {
-        flex-direction: column;
+    /* Navigation */
+    nav ul li {
+        margin-left: 1.5rem; 
     }
 
-    section.about .empty {
-        display: none;
+    /* About Section */
+    section.about {
+        /* Consolidate related styles */
+        & article {
+            margin-left: 0;
+            gap: 0;
 
+            & .title {
+                padding: 2em;
+            }
+
+            & .description {
+                padding: 2em;
+            }
+        }
+
+        & .empty {
+            display: none;
+        }
     }
 
-    section.service .text {
-        border-radius: 20px;
+    /* Service Section */
+    section.service {
+        & article {
+            flex-direction: column;
+            margin-left: 0;
+            gap: 0;
+        }
+
+        & figure {
+            border-radius: 1.25rem;
+            padding: 0;
+            min-height: 33vh;
+        }
+
+            & img {
+                width: 20%;
+            }
+        }
+
+        & .text {
+            border-radius: 1.25rem;
+            margin-top: 0;
+            padding: 2em;
+        }
     }
 
-    section.service figure img {
-        width: 20%;
+    /* Contact Section */
+    section.contact a {
+        font-size: 2.625rem; 
+        padding: 1em;
     }
-
-    
-
-}
